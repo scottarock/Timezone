@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'timezone-app';
+  title: string = 'timezone-app';
+  currentTime = Date.now();
+  active: string = 'Clear';
+
+  onClick(timezone:string): void {
+    // set the time to be current
+    this.currentTime = Date.now();
+    // set the timezone we want to view
+    this.active = timezone;
+  }
+
 }
